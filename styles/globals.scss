@@ -1,0 +1,596 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap');
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family:Menlo;
+
+}
+
+$gray: #34495e;
+$darkgray: #2c3e50;
+$purple:#8D9EFF;
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.warning{
+  color:#FF597B;
+}
+
+li{
+  cursor:pointer;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.signin-main {
+  min-height: 100vh;
+  width: 100%;
+  background-image:linear-gradient(rgba(4,9,30,0.3),rgba(4,9,30,0)),url("https://lexica-serve-encoded-images2.sharif.workers.dev/full_jpg/fd561f29-0ade-4212-8d45-7f38d8ebc850");
+  background-position:center bottom;
+  background-size:cover;
+  position:relative;
+
+
+  /* min-height: 100vh;
+  flex: 1;
+  display: grid;
+  place-items:center; */
+  /* flex-direction: column;
+  justify-content: center;
+  align-items: center; */
+  /* background-position:center;
+    background-size:cover;
+    position:relative;
+    color:white;
+  background-image:linear-gradient(rgba(4,9,30,0.3),rgba(4,9,30,0)),url("https://lexica-serve-encoded-images2.sharif.workers.dev/full_jpg/fd561f29-0ade-4212-8d45-7f38d8ebc850"); */
+}
+
+.choose-services-main{
+  height: 80vh;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-position: center bottom ;
+  background-size:cover;
+  position:relative;
+  color:white;
+  
+  background-image:linear-gradient(rgba(4,9,30,0.3),rgba(4,9,30,0)),url("https://lexica-serve-encoded-images2.sharif.workers.dev/full_jpg/62b1ba41-2e35-476a-a9b2-91dbd866b6cf"); 
+
+}
+
+.services-content {
+  background-image:linear-gradient(rgba(4,9,30,0.3),rgba(4,9,30,0)),url("../public/gradient.png"); 
+  padding:5rem 0rem;
+}
+
+.services-content{
+  h1{
+    margin:0;
+  }
+}
+
+.text-box {
+  width:90%;
+  color:white;
+  position:absolute;
+  top:60%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  text-align:center;
+  display:block;
+}
+
+.text-box{
+  h1{
+    margin-top:5rem;
+  }
+}
+
+.connext-img {
+  position:relative;
+}
+.signin-button{
+  z-index:2;
+  position:absolute;
+  right:28%;
+  bottom:25%;
+  transition: background-color .3s, box-shadow .3s;
+    
+  padding: 12px 16px 12px 42px;
+  border: none;
+  border-radius: 3px;
+  box-shadow: 0 -1px 0 rgba(0, 0, 0, .04), 0 1px 1px rgba(0, 0, 0, .25);
+  
+  color: #757575;
+  font-size: 14px;
+  font-weight: 500;
+  
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgiIGhlaWdodD0iMTgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj48cGF0aCBkPSJNMTcuNiA5LjJsLS4xLTEuOEg5djMuNGg0LjhDMTMuNiAxMiAxMyAxMyAxMiAxMy42djIuMmgzYTguOCA4LjggMCAwIDAgMi42LTYuNnoiIGZpbGw9IiM0Mjg1RjQiIGZpbGwtcnVsZT0ibm9uemVybyIvPjxwYXRoIGQ9Ik05IDE4YzIuNCAwIDQuNS0uOCA2LTIuMmwtMy0yLjJhNS40IDUuNCAwIDAgMS04LTIuOUgxVjEzYTkgOSAwIDAgMCA4IDV6IiBmaWxsPSIjMzRBODUzIiBmaWxsLXJ1bGU9Im5vbnplcm8iLz48cGF0aCBkPSJNNCAxMC43YTUuNCA1LjQgMCAwIDEgMC0zLjRWNUgxYTkgOSAwIDAgMCAwIDhsMy0yLjN6IiBmaWxsPSIjRkJCQzA1IiBmaWxsLXJ1bGU9Im5vbnplcm8iLz48cGF0aCBkPSJNOSAzLjZjMS4zIDAgMi41LjQgMy40IDEuM0wxNSAyLjNBOSA5IDAgMCAwIDEgNWwzIDIuNGE1LjQgNS40IDAgMCAxIDUtMy43eiIgZmlsbD0iI0VBNDMzNSIgZmlsbC1ydWxlPSJub256ZXJvIi8+PHBhdGggZD0iTTAgMGgxOHYxOEgweiIvPjwvZz48L3N2Zz4=);
+  background-color: white;
+  background-repeat: no-repeat;
+  background-position: 12px 11px;
+  cursor:pointer;
+
+  &:hover{
+    box-shadow: 0 -1px 0 rgba(0, 0, 0, .04), 0 2px 4px rgba(0, 0, 0, .25);
+  
+  }
+
+}
+
+
+
+nav{
+  ul{
+    display:flex;
+    list-style:none;
+    justify-content:space-around;
+    margin:0;
+    padding:0;
+    background:transparent;
+  }
+
+}
+
+.navbar{
+  top:40px;
+  left:100px;
+  
+}
+
+nav{
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0, 0.15); /* Black w/opacity/see-through */
+  padding:1rem;
+  color: white;
+  font-weight: bold;
+  position: absolute;
+  font-family: 'Noto Serif', serif;  
+  z-index: 2;
+  width: 100%;
+  text-align: center;
+  top:0;
+
+}
+
+.page{
+  background-color:black;
+  margin:0;
+}
+
+.title {
+  margin: 3rem;
+  line-height: 1.15;
+  font-size: 4rem;
+  font-family:Menlo;
+  color:white;
+}
+
+.second-title {
+  margin: 3rem;
+  line-height: 1.15;
+  font-size: 2.5rem;
+  font-family:Menlo;
+  color:white;
+  text-align:center;
+
+
+}
+
+.service-card {
+  text-align: center;
+  width: 300px;
+  height: 100%;
+  padding: 20px 20px;
+  margin-bottom: 10px;
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(17, 25, 40, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.125);
+  border-radius: 20px;
+  transition: 0.5s;
+  cursor: pointer;
+  margin-left: 20px;
+  color:#BBE1FA;
+}
+
+.service-card:hover {
+  background-color: #205295;
+}
+
+.d-flex{
+  display:flex;
+  margin-top:4rem;
+  margin-left:auto;
+  justify-content:center;
+  gap:2.5rem;
+}
+
+.title,
+.description {
+  text-align: center;
+}
+
+.hero-main {
+  height: 100vh;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-position: center center ;
+  background-size:cover;
+  position:relative;
+  color:white;
+  background-attachment:fixed;
+
+  p {
+    color:#EEEEEE;
+    font-size:1.5rem;
+  }
+}
+
+.email-content {
+  background-image:linear-gradient(rgba(4,9,30,0.8),rgba(4,9,30,0)),url("https://lexica-serve-encoded-images2.sharif.workers.dev/full_jpg/279f2d22-a61a-40a6-b708-1f0e47c25cf5"); 
+  padding:5rem 0rem;
+  color:#B2B2B2;
+  text-align:center;
+  background-position: top top ;
+  background-attachment:fixed;
+
+}
+
+/* select */
+select {
+  /* Reset Select */
+  appearance: none;
+  outline: 0;
+  border: 0;
+  box-shadow: none;
+  /* Personalize */
+  flex: 1;
+  padding: 0 1em;
+  color: #fff;
+  background-color: $darkgray;
+  background-image: none;
+  cursor: pointer;
+}
+/* Remove IE arrow */
+select::-ms-expand {
+  display: none;
+}
+/* Custom Select wrapper */
+.select {
+  margin:auto;
+  position: relative;
+  display: flex;
+  width: 20em;
+  height: 3em;
+  border-radius: .25em;
+  overflow: hidden;
+}
+/* Arrow */
+.select::after {
+  content: '\25BC';
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1em;
+  background-color: #34495e;
+  transition: .25s all ease;
+  pointer-events: none;
+}
+/* Transition */
+.select:hover::after {
+  color: #f39c12;
+}
+
+.textarea-wrapper {
+  width:50%;
+  margin:auto;
+  display:flex;
+  flex-direction:column;
+  gap:2rem;
+}
+
+.textarea-wrapper {
+  textarea{
+    background:#34495e;
+    color:white;
+    padding:1rem;
+    font-size:1rem;
+  }
+  textarea::placeholder{
+    color:white;
+  }
+}
+
+
+
+.email-form{
+  p {
+    width:70%;
+    margin:auto;
+    margin-top:1rem;
+  }
+  button{
+    cursor:pointer;
+    margin-top:2rem;
+    padding:1rem;
+    border-radius:30px;
+    background:#8D9EFF;
+    border:none;
+    font-family:Menlo;
+    color:white;
+  }
+}
+
+
+
+/* image generation */
+
+.image-content {
+  background-image:linear-gradient(rgba(4,9,30,0.8),rgba(4,9,30,0)),url("https://lexica-serve-encoded-images2.sharif.workers.dev/full_jpg/824799ef-e3b2-4f5f-ac83-3530210b9376"); 
+  padding:5rem 3rem;
+  color:#B2B2B2;
+  display:grid;
+  grid-template-columns:1fr 1fr ;
+  background-position: center center ;
+  background-attachment:fixed;
+
+  div {
+    .image-text-wrapper{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+}
+
+.purple-button {
+  background:$purple;
+  font-family:Menlo;
+  padding:1rem 2rem;
+  color:white;
+  border-radius:30px;
+  cursor:pointer;
+  outline:none;
+  border:none;
+
+  &:hover {
+    color:white;
+    background:#b5c0ff;
+    transition:1s;
+  }
+}
+
+
+.image-content{
+  div{
+    input {
+      width:100%;
+      background:transparent;
+      border:1px solid #B2B2B2;
+      outline:none;
+      padding:1rem;
+      font-family:Menlo;
+      color: white;
+
+      &::placeholder{
+        color:white;
+      }
+    }
+  }
+}
+
+
+/* art style  */
+.art-style-wrapper {
+  display:flex;
+  flex-wrap:wrap;
+  gap:2.5rem;
+  padding:1rem 3rem 0rem 0rem;
+
+  div{
+    width:20%;
+  }
+}
+
+
+.image-content >div{
+  padding:0rem 2rem 0rem 3rem;
+}
+.art-style-img {
+  cursor:pointer;
+  border-radius:10px;
+
+  &:hover{
+    scale:1.1;
+    transition:1s;
+  }
+}
+
+
+.image-button-wrapper{
+  button{
+    background:#B2B2B2;
+    color:#233449;
+    font-weight:700;
+    margin:1rem 0rem;
+    border-radius:20px;
+    padding:0.7rem;
+    outline:none;
+    border:none;
+    cursor:pointer;
+
+    &:hover{
+      scale:1.05;
+      transition:1s;
+    
+    }
+
+    &:nth-child(2){
+      margin:0rem 1rem;
+    }
+
+  }
+}
+
+.art-style-img-wrapper>p{
+  color:white;
+}
+
+// chat 
+.chat-content {
+  background-image:linear-gradient(rgba(4,9,30,0.8),rgba(4,9,30,0)),url("https://lexica-serve-encoded-images2.sharif.workers.dev/full_jpg/1b663a2a-d5b3-435e-89f4-deb2a336508e"); 
+  padding:5rem 3rem;
+  color:#B2B2B2;
+  display:grid;
+  background-position: center center ;
+  background-attachment:fixed;
+
+
+
+  .chat-container{
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+  }
+
+  div {
+    display: flex;
+    justify-content: center;
+
+    
+    input {
+      width: 50%;
+      padding:1rem;
+      border:none;
+      outline:none;
+      font-family:menlo;
+      color:grey;
+
+      &:focus{
+        outline:none;
+        border:none;
+      }
+    }
+    button{
+      background:$purple;
+      color:white;
+      padding: 1rem 2rem;
+      border: none;
+      font-family: menlo;
+      cursor: pointer;
+    }
+  }
+}
+
+
+.chat-container {
+
+
+  .chat {
+    color: white;
+    display: flex;
+    flex-direction: column;
+
+    .chat-box {
+      display: flex;
+      flex-direction: row;
+      gap: 5px;
+
+      .chat-user {
+        color: #ffb100;
+      }
+      
+      .chat-gpt {
+        color: red;
+      }
+    } 
+  }  
+}
+
+.mobile-view{
+  display: none;
+}
+
+@media screen and (max-width: 1050px) {
+  #__next{
+    nav{
+      display: none;
+    }
+
+    div{
+      main{
+        display: none;
+      }
+      display: none;
+    }
+
+    
+  }
+
+  .mobile-view{
+    display: block !important;
+    height:100vh;
+    background: #0A2647;
+    color: #2C74B3;
+    position: relative;
+    .text-wrap {
+      display: block !important;
+      position:absolute;
+      top:40%;
+      text-align:center;
+  
+    h1{
+      font-size:2.5rem;
+      text-align: center;
+    }
+  
+    p {
+      font-size:1.5rem;
+      color: white;
+    }
+  }
+    }
+}
+
+@media screen and (max-width: 1050px) {
+.mobile-view {
+  // display: grid;
+  // place-items: center;
+  height:100vh;
+  background: #0A2647;
+  color: #2C74B3;
+  position: relative;
+
+  .text-wrap {
+    position:absolute;
+    top:40%;
+    text-align:center;
+
+  h1{
+    font-size:2.5rem;
+    text-align: center;
+  }
+
+  p {
+    font-size:1.5rem;
+    color: white;
+  }
+}
+}
+
+
+}
+
