@@ -1,11 +1,11 @@
 import Hero from "../../components/Hero";
-import {Button } from "@chakra-ui/react";
+import { Button } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import Metatags from "../../components/Metatags";
 export default function Email() {
   return (
     <>
-          <Metatags/>
+      <Metatags />
 
       <Hero
         text={"Say Goodbye to Awkward Messaging"}
@@ -13,7 +13,9 @@ export default function Email() {
         imgUrl={
           "https://lexica-serve-encoded-images2.sharif.workers.dev/full_jpg/7ca99551-0d58-4980-88a9-c56de1af314a"
         }
-        subtext={"Get personalized message recommendations - tailored to your taste!"}
+        subtext={
+          "Get personalized message recommendations - tailored to your taste!"
+        }
       />
 
       <EmailForm />
@@ -26,40 +28,43 @@ function EmailForm() {
   const [warmOrCold, setWarmOrCold] = useState("");
   const [personReceiving, setPersonReceiving] = useState("");
   const [messageReason, setMessageReason] = useState("");
-  const [loading,setLoading] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [result, setResult] = useState(null);
 
+  const [showWarning, setShowWarning] = useState(false);
 
-  const [showWarning,setShowWarning] =useState(false);
-
-  const onSubmit = async(e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
 
-    if( messageType === null  ||  warmOrCold === null || personReceiving ===null || messageReason ==null){
-        setShowWarning(true)
-    }
-
-    else {
-        setShowWarning(false)
-        setResult("")
-        setLoading(true)
-        const response = await fetch("/api/email",{
+    if (
+      messageType === null ||
+      warmOrCold === null ||
+      personReceiving === null ||
+      messageReason == null
+    ) {
+      setShowWarning(true);
+    } else {
+      setShowWarning(false);
+      setResult("");
+      setLoading(true);
+      const response = await fetch("/api/email", {
         method: "POST",
         headers: {
-            "Content-Type": "application/json",
+          "Content-Type": "application/json",
         },
-        body: JSON.stringify({ 
-            messageType,warmOrCold,personReceiving,messageReason
+        body: JSON.stringify({
+          messageType,
+          warmOrCold,
+          personReceiving,
+          messageReason,
         }),
-        })
+      });
 
-        const data = await response.json();
-        setResult(data.data.text)
-        // alert(data.data)
-        setLoading(false)
-        
-    } 
-  }
+      const data = await response.json();
+      setResult(data.data.text);
+      setLoading(false);
+    }
+  };
   return (
     <div className="email-content">
       <h1>What kind of message do you wish to generate? </h1>
@@ -89,7 +94,6 @@ function EmailForm() {
           <option value="warm">Warm</option>
         </select>
 
-
         <div className="textarea-wrapper">
           <h1>Describe The Person You're Messaging</h1>
           <textarea
@@ -112,17 +116,22 @@ function EmailForm() {
           ></textarea>
         </div>
 
-        <Button onClick={(e)=>onSubmit(e)} isLoading={loading}  className="purple-button">Generate Message</Button>
-        {
-            showWarning ? <p>Please Fill All Credentials Above </p>:<></>
-        }
-        {
-            loading? <p>Loading....</p>:<></>
-
-        }
-        {
-            result ? <><h1>Result</h1><p>{result}</p></>:<></>
-        }
+        <Button
+          onClick={(e) => onSubmit(e)}
+          isLoading={loading}
+          className="purple-button"
+        >
+          Generate Message
+        </Button>
+        {showWarning ? <p>Please Fill All Credentials Above </p> : <></>}
+        {result ? (
+          <>
+            <h1>Result</h1>
+            <p>{result}</p>
+          </>
+        ) : (
+          <></>
+        )}
       </form>
     </div>
   );

@@ -1,9 +1,5 @@
 import { UserAuth } from "../lib/AuthContext";
-/**
- * A simple component to handle rendering of the chats between user and AI
- * @param { chat } - What this does is to destructure the props so that we can use it to display on the front page. Learn more about destructuring here https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment
- * @returns
- */
+
 const Chat = ({ chat }) => {
   const { user } = UserAuth();
 
