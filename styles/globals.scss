@@ -31,7 +31,7 @@ li{
 .signin-main {
   min-height: 100vh;
   width: 100%;
-  background-image:linear-gradient(rgba(4,9,30,0.3),rgba(4,9,30,0)),url("https://lexica-serve-encoded-images2.sharif.workers.dev/full_jpg/fd561f29-0ade-4212-8d45-7f38d8ebc850");
+  background-image:linear-gradient(rgba(4,9,30,0.3),rgba(4,9,30,0)),url("../public/bg/bg-signin.jpeg");
   background-position:center bottom;
   background-size:cover;
   position:relative;
@@ -44,11 +44,7 @@ li{
   /* flex-direction: column;
   justify-content: center;
   align-items: center; */
-  /* background-position:center;
-    background-size:cover;
-    position:relative;
-    color:white;
-  background-image:linear-gradient(rgba(4,9,30,0.3),rgba(4,9,30,0)),url("https://lexica-serve-encoded-images2.sharif.workers.dev/full_jpg/fd561f29-0ade-4212-8d45-7f38d8ebc850"); */
+  
 }
 
 .choose-services-main{
@@ -63,7 +59,7 @@ li{
   position:relative;
   color:white;
   
-  background-image:linear-gradient(rgba(4,9,30,0.3),rgba(4,9,30,0)),url("https://lexica-serve-encoded-images2.sharif.workers.dev/full_jpg/62b1ba41-2e35-476a-a9b2-91dbd866b6cf"); 
+  background-image:linear-gradient(rgba(4,9,30,0.3),rgba(4,9,30,0)),url("../public/bg/bg-choose.jpeg"); 
 
 }
 
@@ -240,7 +236,7 @@ nav{
 }
 
 .email-content {
-  background-image:linear-gradient(rgba(4,9,30,0.8),rgba(4,9,30,0)),url("https://lexica-serve-encoded-images2.sharif.workers.dev/full_jpg/279f2d22-a61a-40a6-b708-1f0e47c25cf5"); 
+  background-image:linear-gradient(rgba(4,9,30,0.8),rgba(4,9,30,0)),url("../public/bg/bg-email-content.jpeg"); 
   padding:5rem 0rem;
   color:#B2B2B2;
   text-align:center;
@@ -339,7 +335,7 @@ select::-ms-expand {
 /* image generation */
 
 .image-content {
-  background-image:linear-gradient(rgba(4,9,30,0.8),rgba(4,9,30,0)),url("https://lexica-serve-encoded-images2.sharif.workers.dev/full_jpg/824799ef-e3b2-4f5f-ac83-3530210b9376"); 
+  background-image:linear-gradient(rgba(4,9,30,0.8),rgba(4,9,30,0)),url("../public/bg/bg-image-content.jpeg"); 
   padding:5rem 3rem;
   color:#B2B2B2;
   display:grid;
@@ -451,7 +447,7 @@ select::-ms-expand {
 
 // chat 
 .chat-content {
-  background-image:linear-gradient(rgba(4,9,30,0.8),rgba(4,9,30,0)),url("https://lexica-serve-encoded-images2.sharif.workers.dev/full_jpg/1b663a2a-d5b3-435e-89f4-deb2a336508e"); 
+  background-image:linear-gradient(rgba(4,9,30,0.8),rgba(4,9,30,0)),url("../public/bg/bg-chat-content.jpeg"); 
   padding:5rem 3rem;
   color:#B2B2B2;
   display:grid;

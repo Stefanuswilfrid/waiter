@@ -13,7 +13,7 @@
     background-size:cover;
     position:relative;
     color:white;
-  background-image:linear-gradient(rgba(4,9,30,0.3),rgba(4,9,30,0)),url("https://lexica-serve-encoded-images2.sharif.workers.dev/full_jpg/a5a8996d-4573-475b-9f7d-86d8034d014f");
+  background-image:linear-gradient(rgba(4,9,30,0.3),rgba(4,9,30,0)),url("../public/bg/bg-home.jpeg");
 }
 /* 
 .footer {
