@@ -55,7 +55,7 @@ function ChooseServices() {
         <SecondTitle text="Our Services" />
         <div className="d-flex">
           <ServiceCard
-            title={"Generate Warm Email Template "}
+            title={"Generate Messages Template "}
             href={"/email"}
             image={"/writting.png"}
           />
