@@ -25,7 +25,7 @@ function MobileView() {
     <div className="mobile-view">
       <div className="text-wrap">
         <h1>Sorry , our website are limited to desktop only</h1>
-        <p>wr(ai)t</p>
+        <p>w(ai)ter</p>
       </div>
     </div>
   );
