@@ -2,7 +2,7 @@
 
 ## W(ai)ter
 
-<i>Nextjs</i> web that contains the bare minimum to help user get instant assistance to <b>generate image , get message template & get meals reccomendation in Desktop. </b>
+<i>Nextjs</i> web that contains the bare minimum to help user get instant assistance to <b>generate image , message template & have a chat . </b>
 
 
 ## Deployment
