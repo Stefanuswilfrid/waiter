@@ -12,7 +12,6 @@ function MyApp({ Component, pageProps }) {
           color="#2798be"
           options={{ easing: "ease", speed: 600, showSpinner: false }}
         />
-        <Navbar />
         <Component {...pageProps} />
       </AuthContextProvider>
       <MobileView />

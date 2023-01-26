@@ -2,30 +2,34 @@ import Hero from "../../components/Hero";
 import { Button } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import Metatags from "../../components/Metatags";
+import Navbar from "../../components/Navbar";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import Footer from "../../components/Footer";
+
 export default function Email() {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+    });
+  }, []);
+
   return (
     <>
       <Metatags />
+      <div className="container">
+        <Navbar />
+        <EmailForm />
+      </div>
+      <Footer/>
 
-      <Hero
-        text={"Say Goodbye to Awkward Messaging"}
-        imagePos={"center"}
-        imgUrl={
-          "https://lexica-serve-encoded-images2.sharif.workers.dev/full_jpg/7ca99551-0d58-4980-88a9-c56de1af314a"
-        }
-        subtext={
-          "Get personalized message recommendations - tailored to your taste!"
-        }
-      />
-
-      <EmailForm />
     </>
   );
 }
 
 function EmailForm() {
-  const [messageType, setMessageType] = useState(null);
-  const [warmOrCold, setWarmOrCold] = useState("");
+  const [messageType, setMessageType] = useState("email template");
+  const [warmOrCold, setWarmOrCold] = useState("warm");
   const [personReceiving, setPersonReceiving] = useState("");
   const [messageReason, setMessageReason] = useState("");
   const [loading, setLoading] = useState(false);
@@ -34,6 +38,8 @@ function EmailForm() {
   const [showWarning, setShowWarning] = useState(false);
 
   const onSubmit = async (e) => {
+    let r = document.getElementById('result');
+
     e.preventDefault();
 
     if (
@@ -42,11 +48,14 @@ function EmailForm() {
       personReceiving === null ||
       messageReason == null
     ) {
+      r.innerHTML =""
       setShowWarning(true);
     } else {
       setShowWarning(false);
       setResult("");
       setLoading(true);
+      r.innerHTML =""
+
       const response = await fetch("/api/email", {
         method: "POST",
         headers: {
@@ -62,77 +71,97 @@ function EmailForm() {
 
       const data = await response.json();
       setResult(data.data.text);
+      r.innerHTML = result;
       setLoading(false);
     }
   };
   return (
-    <div className="email-content">
-      <h1>What kind of message do you wish to generate? </h1>
+    <div
+      className="text-box"
+      data-aos="zoom-out"
+      data-aos-offset="200"
+      data-aos-duration="1000"
+      data-aos-easing="ease-in-out-cubic"
+    >
+      <h1>Say Goodbye to Awkward Messaging ! 💬</h1>
+      <p className="text-box-desc">
+        Say it the right way every time with our pre-written message templates -
+        perfect for any occasion!
+      </p>
 
-      <form onSubmit={onSubmit} className="email-form">
-        <select
-          className="select"
+      <div className="text-box-div-child">
+        <p className="question-msg">
+          <span className="span-no">1</span> Describe The Person You're
+          Messaging
+        </p>
+
+        <textarea
+          onChange={(e) => setPersonReceiving(e.target.value)}
+          placeholder="Jokowi , President of Indonesia & Ex-Governor of Solo"
           name=""
           id=""
-          defaultValue="email template"
-          onChange={(e) => setMessageType(e.target.value)}
-        >
-          <option value="email template">Email Template</option>
-          <option value="Linkedin DMs">Linkedin DMs</option>
-          <option value="Whatsapp Message">WhatsApp Message</option>
-        </select>
+          cols="30"
+          rows="10"
+        ></textarea>
 
-        <h1>Do you wish to generate a warm / cold message ? </h1>
+        <p className="question-msg">
+          <span className="span-no">2</span> Describe You're Reasoning For
+          Messaging Them
+        </p>
 
-        <select
-          className="select"
+        <textarea
+          onChange={(e) => setMessageReason(e.target.value)}
+          placeholder="Convinced Him To Come To My School To Give A Speech About Toxic Masculinity"
           name=""
           id=""
-          onChange={(e) => setWarmOrCold(e.target.value)}
-        >
-          <option value="cold">Cold</option>
-          <option value="warm">Warm</option>
-        </select>
+          cols="30"
+          rows="10"
+        ></textarea>
 
-        <div className="textarea-wrapper">
-          <h1>Describe The Person You're Messaging</h1>
-          <textarea
-            onChange={(e) => setPersonReceiving(e.target.value)}
-            name=""
-            id=""
-            cols="30"
-            rows="10"
-            placeholder="Jokowi , President of Indonesia & Ex-Governor of Solo"
-          ></textarea>
-          <h1>Describe You're Reasoning For Messaging Them</h1>
+        <p className="question-msg">
+          <span className="span-no">3</span> What kind of message do you wish to
+          generate?
+        </p>
 
-          <textarea
-            onChange={(e) => setMessageReason(e.target.value)}
-            name=""
-            id=""
-            cols="30"
-            rows="10"
-            placeholder="Convinced Him To Come To My School To Give A Speech About Toxic Masculinity"
-          ></textarea>
+        <div class="select-dropdown">
+          <select onChange={(e) => setMessageType(e.target.value)}>
+            <option value="email template">Email Template</option>
+            <option value="whatsapp message">Whatsapp Message</option>
+            <option value="Linkedin Dms">Linkedin Dms</option>
+          </select>
+        </div>
+
+        <p className="question-msg">
+          <span className="span-no">4</span> Do you wish to generate a warm /
+          cold message ?
+        </p>
+
+        <div class="select-dropdown">
+          <select onChange={(e) => setWarmOrCold(e.target.value)}>
+            <option value="warm">Warm</option>
+            <option value="cold">Cold</option>
+          </select>
         </div>
 
         <Button
           onClick={(e) => onSubmit(e)}
           isLoading={loading}
-          className="purple-button"
+          className="btn btn-primary "
         >
-          Generate Message
+          Generate
         </Button>
-        {showWarning ? <p>Please Fill All Credentials Above </p> : <></>}
-        {result ? (
-          <>
-            <h1>Result</h1>
-            <p>{result}</p>
-          </>
+        {showWarning ? (
+          <p style={{ marginTop: "1rem" }}>
+            Please Fill All Credentials Above{" "}
+          </p>
         ) : (
           <></>
         )}
-      </form>
+          <>
+            <p id="result"></p>
+          </>
+       
+      </div>
     </div>
   );
 }

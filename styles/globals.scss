@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Poppins:wght@600&display=swap');
+
 html,
 body {
   padding: 0;
@@ -24,8 +26,10 @@ li{
   cursor:pointer;
 }
 
+
 * {
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 .signin-main {
@@ -75,20 +79,92 @@ li{
 }
 
 .text-box {
-  width:90%;
-  color:white;
-  position:absolute;
-  top:60%;
-  left:50%;
-  transform:translate(-50%,-50%);
+  color:black;
   text-align:center;
-  display:block;
+  padding:2rem 2rem;
+  margin-top:120px;
+  box-shadow: 5px 5px 10px 5px lightgrey;
+  border-radius:2%;
+  background: hsl(193deg, 100%, 96%);
+  margin-bottom: 40px;
+
+  button {
+    width: 50%;
+    margin: auto;
+  }
+
+  h1 {
+    margin-bottom: 0rem;
+  }
+  
+
+  .text-box-div-child {
+    display: flex; 
+    flex-direction: column;
+    margin:2rem auto;
+  }
+
+  .img-generator-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+  }
+
+  .text-box-desc {
+    margin-bottom: 3rem;
+  }
+
+  .img-result-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap:1rem;
+
+    img {
+      border-radius: 10px;
+    }
+
+
+  }
+
+  .img-button-input-wrapper{
+    display: flex;
+    flex-direction: row;
+    margin-top: 1rem;
+
+    input {
+      border: none;
+      outline: none;
+      width: 50%;
+      box-shadow: 1px 1px 2px 1px lightgrey;
+      padding: 0rem 1rem;
+    }
+
+    button{
+      margin-left: 0rem;
+      width: 20%;
+      background-color: hsl(332deg, 100%, 66%);
+      box-shadow: 2px 2px 5px 2px lightgrey;
+      cursor: pointer;
+
+      color: white;
+      border: none;
+      padding: 1rem;
+      border-radius: 0px 20px 20px 0;        
+      transition: 1s;
+
+
+      &:hover {
+        box-shadow: 4px 4px 5px 4px lightgrey;
+        transition: 1s;
+      }
+    }
+  }
+
 }
 
 .text-box{
-  h1{
-    margin-top:5rem;
-  }
+  // h1{
+  //   margin-top:5rem;
+  // }
 }
 
 .connext-img {
@@ -125,6 +201,9 @@ li{
 
 
 
+
+
+
 nav{
   ul{
     display:flex;
@@ -144,15 +223,17 @@ nav{
 }
 
 nav{
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0, 0.15); /* Black w/opacity/see-through */
+  // background-color: rgb(0,0,0); /* Fallback color */
+  // background-color: rgba(0,0,0, 0.15); /* Black w/opacity/see-through */
   padding:1rem;
-  color: white;
+  color: black;
   font-weight: bold;
   position: absolute;
   font-family: 'Noto Serif', serif;  
   z-index: 2;
-  width: 100%;
+  width: 1000px;
+  
+  max-width: 100%;
   text-align: center;
   top:0;
 
@@ -216,23 +297,9 @@ nav{
   text-align: center;
 }
 
-.hero-main {
-  height: 100vh;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-position: center center ;
-  background-size:cover;
-  position:relative;
-  color:white;
-  background-attachment:fixed;
+.hero {
+  margin-top:80px;
 
-  p {
-    color:#EEEEEE;
-    font-size:1.5rem;
-  }
 }
 
 .email-content {
@@ -255,10 +322,13 @@ select {
   /* Personalize */
   flex: 1;
   padding: 0 1em;
-  color: #fff;
-  background-color: $darkgray;
+  color: black;
+  padding: 1rem;
   background-image: none;
   cursor: pointer;
+  margin:2rem auto;
+  width: 50%;
+  height:2rem;
 }
 /* Remove IE arrow */
 select::-ms-expand {
@@ -408,6 +478,8 @@ select::-ms-expand {
 .art-style-img {
   cursor:pointer;
   border-radius:10px;
+  transition: 1s;
+
 
   &:hover{
     scale:1.1;
@@ -459,7 +531,6 @@ select::-ms-expand {
   .chat-container{
     display: flex;
     flex-direction: column;
-    margin-top: 1rem;
   }
 
   div {
@@ -493,10 +564,12 @@ select::-ms-expand {
 
 
 .chat-container {
+  font-size: 0.8rem;
 
 
   .chat {
-    color: white;
+    color: black;
+    opacity: 1;
     display: flex;
     flex-direction: column;
 
@@ -590,3 +663,577 @@ select::-ms-expand {
 
 }
 
+
+*{
+  box-sizing: border-box;
+}
+
+/* general styles */
+body{
+  font-family: 'Open Sans',sans-serif;
+  margin:0;
+  color:hsl(192,100%,9%);
+  font-size: 1.15em;
+}
+
+p{
+  opacity:1;
+  color: grey;
+}
+h1,h2 {
+  font-family: 'Poppins',sans-serif;
+}
+
+.container {
+  width:1000px;
+  max-width: 100%;
+  margin:auto;
+  padding:0 20px;
+}
+
+img {
+  max-width: 100%;
+}
+
+.flex{
+  display: flex;
+  align-items: center;   
+  
+}
+
+
+header {
+  background-image: url("../public/bg-hero-desktop.svg");
+  background-size: cover;
+  background-position: center center;
+  background-color: hsl(193,100%,96%);
+  padding:40px 0;
+}
+
+.nav-container {
+  width: 1000px;
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  margin: auto;
+  margin-top: 40px;
+}
+
+nav {
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+.header-img{
+  width:80%;
+  margin-left:20%;
+}
+.btn {
+  border-radius: 50px;
+  background-color: #fff;
+  font-size: 16px;
+  padding:15px 60px;
+  box-shadow: 0px 0px 5px rgba(0,0,0,0.15);
+  border:none;
+  cursor: pointer;
+  font-weight: 700;
+  transition: 0.5s;
+
+}
+
+.btn:hover {
+  box-shadow: 0 0 1px rgba(0,0,0,0.15),
+  0 0 3px rgba(0,0,0,0.15),
+  0 0 3px rgba(0,0,0,0.15),
+  0 0 5px rgba(0,0,0,0.15);
+  transition: 0.5s;
+}
+
+.btn-primary {
+  background-color: hsl(332,100%,66%);
+  color:#fff;
+  transition: 0.5s;
+
+}
+
+.btn-primary:hover {
+  box-shadow: 0 0 1px hsl(332,100%,66%),
+  0 0 3px hsl(332,100%,66%),
+  0 0 3px hsl(332,100%,66%),
+  0 0 5px hsl(332,100%,66%);
+  transition: 0.5s;
+}
+
+.flex> div ,.flex>ul{
+  flex:1;
+}
+
+.box {
+  box-shadow: 0px 0px 5px rgba(0,0,0,0.15);
+  border-radius: 15px;
+  margin: 40px 0;
+  padding:60px;
+  background-color: #fff;
+  transition: 1s !important;
+
+}
+
+
+.box:hover {
+  scale: 1.05;
+  transition: 1s;
+}
+
+.small-box {
+  position: relative;
+  display: inline-block;
+  margin-bottom: -50%;
+  /*transform: translateY(50%);*/
+  z-index: 1;
+  
+}
+.box img {
+  width:80%;
+}
+
+.center {
+  text-align: center;
+}
+
+footer {
+  background-color: hsl(192,100%,9%);
+  color:#fff;
+  padding:100px 0 60px;
+
+  .container {
+    h2 {
+      text-align: center;
+    }
+  }
+}
+
+footer ul {
+  padding:0;
+  list-style-type: none;
+  width:100%;
+  display: block;
+}
+
+footer ul li {
+  margin-bottom: 20px;
+}
+
+.align-start{
+  align-items: flex-start;
+}
+
+footer .social-media {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+footer .circle {
+  border: 1px solid #fff;
+  border-radius: 50%;
+  display: inline-flex;
+  width:40px;
+  height:40px;
+  margin-right: 10px;
+  color:#fff;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+footer p {
+  text-align: center;
+}
+@media (max-width:768px) {
+  body{
+      text-align: center;
+  }
+  nav.flex{
+      flex-direction: row;
+  }
+  .header-img{
+      margin-top: 40px;
+      margin-left:0;
+      width:100%;
+  }
+  .flex{
+      flex-direction: column;
+  }
+  .box-reverse-mobile{
+      flex-direction: column-reverse;
+  }
+  .footer ul {
+      padding:0;
+      width:100%;
+  }
+
+  .footer p {
+      text-align: center;
+  }
+}
+
+
+.open-button {
+  background-color: hsl(332deg, 100%, 66%);;
+  color: white;
+  padding: 10px 10px;
+  border: none;
+  cursor: pointer;
+  position: fixed;
+  bottom: 23px;
+  right: 28px;
+  width: 50px;
+  height: 50px;
+  border-radius:50%;
+  transition: 2s;
+
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.chat-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;  
+  transition: 2s;
+  border-radius:20px;
+
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: white;
+    font-family: 'Inter', sans-serif;
+
+    label {
+      opacity: 0.6;
+    }
+
+}
+
+/* Full-width textarea */
+.form-container textarea {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 5px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+/* When the textarea gets focus, do something */
+.form-container textarea:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/send button */
+.form-container .btn {
+  // background-color: #04AA6D;
+  // color: white;
+  // padding: 16px 20px;
+  // border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  // opacity: 0.8;
+}
+
+// /* Add a red background color to the cancel button */
+// .form-container .cancel {
+//   background-color: red;
+// }
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+
+.span-no {
+  opacity: 1;
+  width:1.75rem;
+  color:white;
+  background:hsl(332deg, 100%, 66%);
+  border-radius:50%;
+  height:1.75rem;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  margin:auto;
+
+}
+.question-msg {
+  display:flex;
+  margin:auto;
+  gap:0.5rem;
+}
+
+textarea{
+  margin:2rem auto;
+  border:transparent;
+  padding: 1rem;
+  font-family: 'Inter', sans-serif;
+  font-size:1rem;
+  width: 70%;
+  
+
+  &:focus {
+    border: none;
+    outline: none;
+  }
+
+  &:hover {
+    border: none;
+
+
+  }
+}
+.select-dropdown,
+.select-dropdown * {
+	margin: 0;
+	padding: 0;
+	position: relative;
+	box-sizing: border-box;
+}
+.select-dropdown {
+	position: relative;
+	background-color: white;
+	border-radius: 4px;
+  margin: 2rem auto;
+  width: 60%;
+}
+.select-dropdown select {
+	font-size: 1rem;
+	font-weight: normal;
+	max-width: 100%;
+  width: 100%;
+	padding: 8px 24px 8px 10px;
+	border: none;
+	background-color: transparent;
+		-webkit-appearance: none;
+		-moz-appearance: none;
+	appearance: none;
+}
+.select-dropdown select:active, .select-dropdown select:focus {
+	outline: none;
+	box-shadow: none;
+}
+.select-dropdown:after {
+	content: "";
+	position: absolute;
+	top: 50%;
+	right: 8px;
+	width: 0;
+	height: 0;
+	margin-top: -2px;
+	border-top: 5px solid #aaa;
+	border-right: 5px solid transparent;
+	border-left: 5px solid transparent;
+}
+
+
+
+/* Style the accordion section */
+.accordion__section {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Style the buttons that are used to open and close the accordion panel */
+.accordion {
+  background-color: white;
+  color: #444;
+  cursor: pointer;
+  padding: 5px 10px;
+  display: flex;
+  flex-direction: row !important;
+  align-items: center;
+  justify-content: space-between;
+  border: none;
+  outline: none;
+  transition: background-color 0.6s ease;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.accordion:hover,
+.active {
+  background-color: white;
+  margin:0rem !important;
+}
+
+/* Style the accordion content title */
+.accordion__title {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+/* Style the accordion chevron icon */
+.accordion__icon {
+  margin-left: auto;
+  transition: transform 0.6s ease;
+}
+
+/* Style to rotate icon when state is active */
+.rotate {
+  transform: rotate(90deg);
+}
+
+/* Style the accordion content panel. Note: hidden by default */
+.accordion__content {
+  margin-top:0rem !important;
+  background-color: white;
+  overflow: hidden;
+  transition: max-height 0.6s ease;
+}
+
+/* Style the accordion content text */
+.accordion__text {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  padding: 5px;
+}
+
+.img-style-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  img:nth-child(2){
+    margin:0 1rem;
+  }
+  img:nth-child(5){
+    margin:0 1rem;
+  }
+
+  .art-style-label {
+    margin-top: 0rem; 
+    font-size: 0.8rem;
+  }
+}
+
+.range-input-wrapper {
+  input {
+    margin-top: 1rem;
+    text-align: left;
+    width: 50%;
+    background-color: white;
+    border: 0;
+
+  }
+
+  input[type='range']::-webkit-slider-thum {
+    color: hsl(332deg, 100%, 66%);
+
+
+
+  }
+  p{
+    margin-top: 0.5rem;
+    font-size:0.9rem;
+  }
+
+
+  .range-input{
+    accent-color: hsl(332deg, 100%, 66%);
+
+    --percent: 50%;
+	background-color: white;
+	background-repeat: no-repeat;
+	border-radius: 0.25em;
+	display: block;
+	width: 70%;
+	height: 0.5em;
+	-webkit-appearance: none;
+	appearance: none;
+	-webkit-tap-highlight-color: transparent;
+  }
+
+  .range-input-center{
+    accent-color: hsl(332deg, 100%, 66%);
+
+    --percent: 50%;
+	background-color: white;
+  margin: 1rem auto;
+	background-repeat: no-repeat;
+	border-radius: 0.25em;
+	display: block;
+	width: 70%;
+	height: 0.5em;
+	-webkit-appearance: none;
+	appearance: none;
+	-webkit-tap-highlight-color: transparent;
+  }
+
+  .slider {
+    accent-color: hsl(332deg, 100%, 66%);
+
+    --percent: 50%;
+	background-color: white;
+  margin: 1rem auto;
+	background-repeat: no-repeat;
+	border-radius: 0.25em;
+	display: block;
+	width: 70%;
+	height: 0.5em;
+	-webkit-appearance: none;
+	appearance: none;
+	-webkit-tap-highlight-color: transparent;
+  }
+
+  .label-range {
+    font-size: 1.2rem;
+    margin:1rem auto 1.5rem auto;
+  }
+}
+
+.tools-check {
+  cursor: pointer;
+  background: white;
+  width: 60%;
+  margin: 1rem auto 0rem auto;
+  border-radius: 10px;
+  text-align: left;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.5s;
+}
+
+.tools-check.active {
+  cursor: pointer;
+  background: hsl(332deg, 100%, 66%);
+  color: white;
+  width: 60%;
+  margin: 1rem auto 0rem auto !important;
+  border-radius: 10px;
+  text-align: left;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.5s;
+
+
+  // cursor: pointer;
+  // color: white;
+  // background: hsl(332deg, 100%, 66%);
+  // width: 50%;
+  // margin: 1rem auto 0.5rem auto;
+  // border-radius: 10px;
+  // text-align: left;
+  // padding: 1rem;
+  // display: flex;
+  // justify-content: space-between;
+  // align-items: center;
+}

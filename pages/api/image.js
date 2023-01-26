@@ -8,14 +8,17 @@ const configuration = new Configuration({
 
 export default async function handler(req,res){
     const {imagePrompt,artStyle} = req.body ;
-    const prompt = `generate ${artStyle} image of ${imagePrompt} .`;
+    const number = req.body.number ;
+    console.log("h",number)
+
+    const prompt = `generate ${number} ${artStyle} image of ${imagePrompt} in array format .`;
 
     const response = await openai.createImage({
       prompt: prompt,
-      n:1,
-      size:"512x512",
+      n:parseInt(number),
+      size:"256x256",
     });
 
-    const output = response.data.data[0].url;
+    const output = response.data.data;
     return res.status(200).json({ data: output })
 }

@@ -10,12 +10,12 @@ export default async function handler(req,res){
     const {messageType,warmOrCold,personReceiving,messageReason} = req.body ;
     const prompt = `write a ${warmOrCold} ${messageType} to the person for the specified reason below. 
     Make sure the message is tailored toward the person's experience & skillset . Person: ${personReceiving}
-    Reason : ${messageReason}.`;
+    Reason : ${messageReason}. Return in HTML format, no img.`;
 
     const response = await openai.createCompletion({
       model: "text-davinci-003", 
       prompt: prompt,
-      temperature: warmOrCold === "cold"? 0.7:0.95 ,
+      temperature: 0.95 ,
       max_tokens: 3000,
 
     })
