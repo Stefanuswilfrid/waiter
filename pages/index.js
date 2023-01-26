@@ -2,9 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import { useRouter } from "next/router";
-import Title from "../components/Title";
 import Metatags from "../components/Metatags";
-import { Typewriter } from "react-simple-typewriter";
 import Index from "../components/Index";
 
 

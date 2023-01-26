@@ -1,7 +1,5 @@
-import Hero from "../../components/Hero";
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import ArtCard from "../../components/ArtCard";
 import {Button } from "@chakra-ui/react";
 import Metatags from "../../components/Metatags";
 import Navbar from "../../components/Navbar";

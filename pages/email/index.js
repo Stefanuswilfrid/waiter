@@ -1,4 +1,3 @@
-import Hero from "../../components/Hero";
 import { Button } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import Metatags from "../../components/Metatags";
@@ -54,7 +53,6 @@ function EmailForm() {
       setShowWarning(false);
       setResult("");
       setLoading(true);
-      r.innerHTML =""
 
       const response = await fetch("/api/email", {
         method: "POST",
@@ -70,8 +68,8 @@ function EmailForm() {
       });
 
       const data = await response.json();
-      setResult(data.data.text);
-      r.innerHTML = result;
+      // setResult(data.data.text);
+      r.innerHTML = data.data.text;
       setLoading(false);
     }
   };

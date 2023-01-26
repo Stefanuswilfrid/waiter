@@ -1,8 +1,6 @@
 import { Button, Input } from "@chakra-ui/react";
-import Hero from "../../components/Hero";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import { UserAuth } from "../../lib/AuthContext";
-import Chat from "../../components/Chat";
 import Metatags from "../../components/Metatags";
 import Navbar from "../../components/Navbar";
 import { CheckIcon } from '@chakra-ui/icons';
@@ -10,7 +8,12 @@ import Footer from "../../components/Footer";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-export default function ChatPage() {
+export default function MealPage() {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+    });
+  }, []);
 
   return (
     <>
@@ -58,7 +61,6 @@ function EmailForm() {
       r.innerHTML =""
       setShowWarning(true);
     } else {
-      r.innerHTML =""
       setShowWarning(false);
       setResult("");
       setLoading(true);
@@ -78,12 +80,11 @@ function EmailForm() {
       });
 
       const data = await response.json();
-      setResult(data.data.text);
+      r.innerHTML = data.data.text;
       
 
       setLoading(false);
   
-      r.innerHTML = result; 
     }
   };
 
@@ -131,7 +132,7 @@ function EmailForm() {
 
         <textarea
           onChange={(e) => setIngredients(e.target.value)}
-          placeholder="100g of Noodles 🍜 , 400ml of Milk 🍼"
+          placeholder="100g of Noodles 🍜 , 400ml of Milk 🍼, 1kg of chicken meat 🐓, 3 slice of bread 🍞"
           name=""
           id=""
           cols="30"
