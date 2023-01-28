@@ -4,7 +4,7 @@ export default function IndexCard({title,description,imgUrl,reverse,dataAos,data
         <>
         {<>
             {reverse? 
-                <div class="box flex box-reverse-mobile" data-aos={dataAos} 
+                <div className="box flex box-reverse-mobile" data-aos={dataAos} 
                 data-aos-offset={dataAosOffset} data-aos-duration={dataAosDuration} data-aos-easing={dataAosEasing} >
         <div>
         <img src={imgUrl} alt=""/>
@@ -17,7 +17,7 @@ export default function IndexCard({title,description,imgUrl,reverse,dataAos,data
       </div>
       :
 
-      <div class="box flex"  data-aos={dataAos} 
+      <div className="box flex"  data-aos={dataAos} 
                 data-aos-offset={dataAosOffset} data-aos-duration={dataAosDuration} data-aos-easing={dataAosEasing}>
         <div>
         <h2>{title} </h2>      

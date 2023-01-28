@@ -73,10 +73,10 @@ export default function Index() {
     <>
       <main>
         <header>
-          <div class="container">
+          <div className="container">
             <Navbar />
 
-            <div class="flex hero">
+            <div className="flex hero">
               <div
                 data-aos="fade-right"
                 data-aos-offset="200"
@@ -92,7 +92,7 @@ export default function Index() {
                 </p>
 
                 <a href="#test">
-                  <button href="#test" class="btn btn-primary ">
+                  <button href="#test" className="btn btn-primary ">
                     Get Started For Free
                   </button>
                 </a>
@@ -104,7 +104,7 @@ export default function Index() {
                 data-aos-easing="ease-in-out-cubic"
               >
                 <img
-                  class="header-img"
+                  className="header-img"
                   src="https://res.cloudinary.com/dfkn1kzs0/image/upload/v1588506071/illustration-mockups_qrukpf.svg"
                   alt="mockups"
                 />
@@ -112,7 +112,7 @@ export default function Index() {
             </div>
           </div>
         </header>
-        <div class="container" id="test">
+        <div className="container" id="test">
           <Link href={user ? "/email" : "/"}>
             <IndexCard
               dataAos="fade-down"
@@ -166,20 +166,20 @@ export default function Index() {
         </div>
       </main>
 
-      <div class="container center">
+      <div className="container center">
         <div
-          class="box small-box"
+          className="box small-box"
           data-aos="zoom-in"
           data-aos-offset="200"
           data-aos-duration="1000"
           data-aos-easing="ease-in-out-cubic"
         >
           <h2>Dont wait any longer !</h2>
-              {user? <button class="btn btn-primary btn-big">
+              {user? <button className="btn btn-primary btn-big">
               {" "}
               Get Started For Free
             </button> : 
-            <button class="btn btn-primary btn-big" onClick={handleGoogleSignIn}>
+            <button className="btn btn-primary btn-big" onClick={handleGoogleSignIn}>
               {" "}
               Get Started For Free
             </button>
@@ -199,11 +199,11 @@ export default function Index() {
         </button>
       )} */}
 
-      <div class="chat-popup" id="myForm">
-        <form class="form-container">
+      <div className="chat-popup" id="myForm">
+        <form className="form-container">
           <h1>Chat</h1>
 
-          <label for="msg">
+          <label htmlFor="msg">
             <b>Message</b>
           </label>
           <textarea
@@ -224,7 +224,7 @@ export default function Index() {
 
           <button
             type="button"
-            class="btn"
+            className="btn"
             onClick={() => {
               closeForm();
             }}

@@ -6,10 +6,6 @@ function Accordion(props) {
   const content = useRef(null);
   const [height, setHeight] = useState("0px");
 
-  useEffect(() => {
-    console.log("Height for ", props.title, ": ", height);
-  }, [height]);
-
   function toggleAccordion() {
     setActive(!active);
     setHeight(active ? "0px" : `${content.current.scrollHeight}px`);
@@ -31,7 +27,7 @@ function Accordion(props) {
               xmlns="http://www.w3.org/2000/svg"
               width="10"
               height="6"
-              class=""
+              className=""
             >
               <path
                 fill-rule="evenodd"

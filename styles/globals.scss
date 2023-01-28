@@ -65,6 +65,11 @@ a {
   .img-generator-container {
     display: grid;
     grid-template-columns: 2fr 1fr;
+
+    @media screen and (max-width: 730px) {
+      grid-template-columns: 1fr;
+
+    }
   }
 
   .text-box-desc {
@@ -75,6 +80,13 @@ a {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap:1rem;
+
+    @media screen and (max-width: 730px) {
+      margin: auto;
+      grid-template-columns: 1fr ;
+      margin-bottom:2rem;
+
+    }
 
     img {
       border-radius: 10px;
@@ -94,7 +106,13 @@ a {
       width: 50%;
       box-shadow: 1px 1px 2px 1px lightgrey;
       padding: 0rem 1rem;
+
+      @media screen and (max-width: 730px) {
+        width:60%;
+      }
     }
+
+    
 
     button{
       margin-left: 0rem;
@@ -108,6 +126,10 @@ a {
       padding: 1rem;
       border-radius: 0px 20px 20px 0;        
       transition: 1s;
+
+      @media screen and (max-width: 730px) {
+        width:30%;
+      }
 
 
       &:hover {
@@ -758,11 +780,20 @@ footer p {
   align-items:center;
   margin:auto;
 
+  @media screen and (max-width: 730px) {
+    width: 2.3rem;
+  }
+
 }
 .question-msg {
   display:flex;
   margin:auto;
   gap:0.5rem;
+
+  @media screen and (max-width: 730px) {
+    text-align: left;
+    gap:0.8rem;
+  }
 }
 
 textarea{
@@ -781,8 +812,10 @@ textarea{
 
   &:hover {
     border: none;
+  }
 
-
+  @media screen and (max-width: 730px) {
+    width: 100%;
   }
 }
 .select-dropdown,
@@ -798,6 +831,10 @@ textarea{
 	border-radius: 4px;
   margin: 2rem auto;
   width: 60%;
+
+  @media screen and (max-width: 730px) {
+    width: 100%;
+  }
 }
 .select-dropdown select {
 	font-size: 1rem;
@@ -863,6 +900,11 @@ textarea{
   font-family: "Open Sans", sans-serif;
   font-weight: 600;
   font-size: 14px;
+
+  @media screen and (max-width: 730px) {
+    margin-left:1.5rem;
+  }
+  
 }
 
 /* Style the accordion chevron icon */
@@ -905,6 +947,11 @@ textarea{
   .art-style-label {
     margin-top: 0rem; 
     font-size: 0.8rem;
+  }
+
+  @media screen and (max-width: 730px) {
+    grid-template-columns: 1fr 1fr ;
+
   }
 }
 
@@ -964,6 +1011,13 @@ textarea{
   .slider {
     accent-color: hsl(332deg, 100%, 66%);
 
+
+    @media screen and (max-width: 730px) {
+      margin-top: 2rem;
+      width: 90%;
+
+    }
+
     --percent: 50%;
 	background-color: white;
   margin: 1rem auto;
@@ -995,6 +1049,11 @@ textarea{
   justify-content: space-between;
   align-items: center;
   transition: 0.5s;
+
+  @media screen and (max-width: 730px) {
+    width: 100%;
+
+  }
 }
 
 .tools-check.active {

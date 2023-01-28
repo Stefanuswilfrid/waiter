@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function Footer() {
   return (
     <footer>
-        <div class="container ">
+        <div className="container ">
         <Link href="/">
           <h2>W(ai)ter</h2>
           </Link>
