@@ -188,16 +188,16 @@ export default function Index() {
         </div>
       </div>
 
-      {{user && (
+      {user && (
         <button
-          class="open-button"
+          className="open-button"
           onClick={() => {
             openForm();
           }}
         >
           <ChatIcon />
         </button>
-      )}}
+      )}
 
       <div className="chat-popup" id="myForm">
         <form className="form-container">
