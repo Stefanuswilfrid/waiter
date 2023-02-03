@@ -9,7 +9,7 @@ const generateAction = async (req, res) => {
   const { userInput } = req.body;
   const baseCompletion = await openai.createCompletion({
     model: "text-davinci-003",
-    prompt: userInput,
+    prompt: userInput + ",  reply in english",
     temperature: 0.8,
     max_tokens: 250,
   });

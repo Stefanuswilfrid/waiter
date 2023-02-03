@@ -334,20 +334,8 @@ select::-ms-expand {
 
 // chat 
 .chat-content {
-  background-image:linear-gradient(rgba(4,9,30,0.8),rgba(4,9,30,0)),url("../public/bg/bg-chat-content.jpeg"); 
-  padding:5rem 3rem;
-  color:#B2B2B2;
-  display:grid;
-  background-position: center center ;
-  background-attachment:fixed;
 
-
-
-  .chat-container{
-    display: flex;
-    flex-direction: column;
-  }
-
+  
   div {
     display: flex;
     justify-content: center;
@@ -377,9 +365,18 @@ select::-ms-expand {
   }
 }
 
+.chat-wrapper {
+  display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    height: 300px;
+    margin-bottom: 1rem;
+
+}
 
 .chat-container {
   font-size: 0.8rem;
+  
 
 
   .chat {
@@ -387,6 +384,8 @@ select::-ms-expand {
     opacity: 1;
     display: flex;
     flex-direction: column;
+    overflow-y: scroll;
+    // height: 350px;
 
     .chat-box {
       display: flex;
@@ -394,11 +393,19 @@ select::-ms-expand {
       gap: 5px;
 
       .chat-user {
-        color: #ffb100;
+        color: black;
+    padding: 1rem;
+    margin-left: auto;
+    background: hsl(193deg, 100%, 96%);
+    border-radius: 15px;
       }
       
       .chat-gpt {
-        color: red;
+        color: black;
+    padding: 1rem;
+    margin-right: auto;
+    background:rgb(245, 245, 245);
+    border-radius: 15px;
       }
     } 
   }  
@@ -648,18 +655,30 @@ footer p {
 .chat-popup {
   display: none;
   position: fixed;
-  bottom: 0;
+  bottom: 15px;
   right: 15px;
   border: 3px solid #f1f1f1;
   z-index: 9;  
   transition: 2s;
   border-radius:20px;
 
+  h1 {
+    background: hsl(193deg, 100%, 96%);
+    margin: 0rem;
+    border-radius: 15px 15px 0px 0px;
+    padding: 0.7rem;
+
+    svg {
+      cursor: pointer;
+    }
+  }
+
 }
 
 /* Add styles to the form container */
 .form-container {
-  max-width: 300px;
+  width: 300px;
+
   padding: 10px;
   background-color: white;
     font-family: 'Inter', sans-serif;
@@ -668,10 +687,12 @@ footer p {
       opacity: 0.6;
     }
 
+    
+
 }
 
 /* Full-width textarea */
-.form-container textarea {
+.form-container input {
   width: 100%;
   padding: 15px;
   margin: 5px 0 5px 0;
@@ -680,18 +701,28 @@ footer p {
 }
 
 /* When the textarea gets focus, do something */
-.form-container textarea:focus {
-  background-color: #ddd;
+.form-container input:focus {
   outline: none;
 }
 
 /* Set a style for the submit/send button */
-.form-container .btn {
-
-  cursor: pointer;
-  width: 100%;
-  margin-bottom:10px;
+.chat-btn {
+  // margin-bottom:10px;
   // opacity: 0.8;
+  width: 10%;
+  height: 100%;
+
+  // border-radius: 10px;
+  background-color: #fff;
+  font-size: 16px;
+  padding: 15px 40px;
+  box-shadow: 0px 0px 3px rgb(0 0 0 / 15%);
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+  transition: 0.5s;
+
+  
 }
 
 .form-container .btn:hover, .open-button:hover {

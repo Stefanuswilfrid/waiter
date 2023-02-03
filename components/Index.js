@@ -2,7 +2,7 @@ import Image from "next/image";
 import IndexCard from "./IndexCard";
 import Navbar from "./Navbar";
 import Link from "next/link";
-import { ChatIcon } from "@chakra-ui/icons";
+import { ChatIcon, ChevronLeftIcon,ChevronRightIcon } from "@chakra-ui/icons";
 import Chat from "./Chat";
 import { useState, useEffect } from "react";
 import { Button } from "@chakra-ui/react";
@@ -17,7 +17,7 @@ export default function Index() {
       duration: 1000,
     });
   }, []);
-  const { user,googleSignIn } = UserAuth();
+  const { user, googleSignIn } = UserAuth();
 
   function openForm() {
     document.getElementById("myForm").style.display = "block";
@@ -33,9 +33,7 @@ export default function Index() {
     } catch (error) {
       console.log(error);
     }
-  }; 
-
-
+  };
 
   const [userInput, setUserInput] = useState("");
   const [isGenerating, setIsGenerating] = useState(false);
@@ -128,23 +126,22 @@ export default function Index() {
               }
             />
           </Link>
-          
-          <Link href={user ? "/meal" : "/"}>
 
-          <IndexCard
-            dataAos="fade-up-right"
-            dataAosOffset="200"
-            dataAosDuration="1000"
-            dataAosEasing="ease-in-out-cubic"
-            title={"Get Meals Reccomendation Based on Resources"}
-            description={
-              "Elevate your meal game with our web. We provide you with delicious, nutritious meal ideas and recipes tailored to your dietary needs, resources and preferences."
-            }
-            imgUrl={
-              "https://images.squarespace-cdn.com/content/v1/5c9bd26d92441ba9c1cfb631/1628807774597-I7DQN0L1FECUY81BOZR4/Group+6.png?format=750w"
-            }
-            reverse={true}
-          />
+          <Link href={user ? "/meal" : "/"}>
+            <IndexCard
+              dataAos="fade-up-right"
+              dataAosOffset="200"
+              dataAosDuration="1000"
+              dataAosEasing="ease-in-out-cubic"
+              title={"Get Meals Reccomendation Based on Resources"}
+              description={
+                "Elevate your meal game with our web. We provide you with delicious, nutritious meal ideas and recipes tailored to your dietary needs, resources and preferences."
+              }
+              imgUrl={
+                "https://images.squarespace-cdn.com/content/v1/5c9bd26d92441ba9c1cfb631/1628807774597-I7DQN0L1FECUY81BOZR4/Group+6.png?format=750w"
+              }
+              reverse={true}
+            />
           </Link>
 
           <Link href={user ? "/image" : "/"}>
@@ -175,16 +172,20 @@ export default function Index() {
           data-aos-easing="ease-in-out-cubic"
         >
           <h2>Dont wait any longer !</h2>
-              {user? <button className="btn btn-primary btn-big">
-              {" "}
-              Get Started For Free
-            </button> : 
-            <button className="btn btn-primary btn-big" onClick={handleGoogleSignIn}>
+          {user ? (
+            <button className="btn btn-primary btn-big">
               {" "}
               Get Started For Free
             </button>
-            }
-            
+          ) : (
+            <button
+              className="btn btn-primary btn-big"
+              onClick={handleGoogleSignIn}
+            >
+              {" "}
+              Get Started For Free
+            </button>
+          )}
         </div>
       </div>
 
@@ -200,41 +201,45 @@ export default function Index() {
       )}
 
       <div className="chat-popup" id="myForm">
-        <form className="form-container">
-          <h1>Chat</h1>
+        <h1>
+          <ChevronLeftIcon
+            onClick={() => {
+              closeForm();
+            }}
+          />{" "}
+          Chat
+        </h1>
+        <form className="form-container"  onSubmit={(e) => handleSubmit(e)}
+>
+          <label htmlFor="msg">{/* <b>Message</b> */}</label>
+          
 
-          <label htmlFor="msg">
-            <b>Message</b>
-          </label>
-          <textarea
+          {chat.length > 0 ? (
+            <div className="chat-wrapper">
+              <Chat chat={chat} />
+            </div>) : <div style={{marginTop:"1.5rem"}}></div>
+          }
+          
+          <div style={{display:"flex",alignItems:"center"}}>
+          <input
             placeholder="Type message.."
             name="msg"
             required
             onChange={(e) => setUserInput(e.target.value)}
-          ></textarea>
-          <Chat chat={chat} />
+          />
 
           <Button
-            className="btn btn-primary"
+            className="chat-btn"
             isLoading={isGenerating}
             onClick={(e) => handleSubmit(e)}
           >
-            Send
+            <ChevronRightIcon/>
           </Button>
-
-          <button
-            type="button"
-            className="btn"
-            onClick={() => {
-              closeForm();
-            }}
-          >
-            Close
-          </button>
+          </div>
         </form>
       </div>
 
-      <Footer/>
+      <Footer />
     </>
   );
 }
