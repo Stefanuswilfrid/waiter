@@ -729,6 +729,16 @@ footer p {
   opacity: 1;
 }
 
+@media screen and (max-width: 730px) {
+  .chat-popup {
+    h1 {
+      svg {
+        margin-left:-7rem;
+      }
+    }
+  }
+}
+
 .span-no {
   opacity: 1;
   width:1.75rem;
