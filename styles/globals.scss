@@ -801,7 +801,7 @@ textarea{
 	background-color: white;
 	border-radius: 4px;
   margin: 2rem auto;
-  width: 60%;
+  width: 70%;
 
   @media screen and (max-width: 730px) {
     width: 100%;
@@ -814,6 +814,7 @@ textarea{
   width: 100%;
 	padding: 8px 24px 8px 10px;
 	border: none;
+	height:3rem;
 	background-color: transparent;
 		-webkit-appearance: none;
 		-moz-appearance: none;
