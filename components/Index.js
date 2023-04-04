@@ -66,6 +66,7 @@ export default function Index() {
           setIsGenerating(false);
         });
     }
+    setUserInput("");
   };
   return (
     <>
